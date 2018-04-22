@@ -46,10 +46,10 @@ $(function() {
 	$('.card-coupon').mask("0000 0000 0000 0000");
 
 
-	$('.tarrifs-item').click(function() {
-		var top = $('#login-collapse').offset().top;
-		$('body,html').animate({scrollTop: top-100}, 1000);
-	});
+	// $('.tarrifs-item').click(function() {
+	// 	var top = $('#login-collapse').offset().top;
+	// 	$('body,html').animate({scrollTop: top-100}, 1000);
+	// });
 
 	$("#login-form").validate({
 			rules: {

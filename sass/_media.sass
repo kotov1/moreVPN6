@@ -1,16 +1,22 @@
 @import "vars"
 
 
+@media only screen and (min-width : 380px)
+
+	.download
+		&-content
+			right: -15%
+	/**/
+
+
+
 @media only screen and (min-width : 480px)
 
-	// .step2 .form-line
-	// 	max-width: 435px
-	// 	margin: 0 auto
+	.info
+		&-img
+			max-width: 100%
+			margin: 2.6rem auto 0
 
-	// .info
-	// 	&-img
-	// 		max-width: 100%
-	// 		margin: 2.6rem auto 0
 
 	// .page-wrapper.thanks-page
 	// 	background-image: url('../img/bg/md-bg/bg.jpg')
@@ -29,48 +35,56 @@
 
 
 
-@media only screen and (min-width : 576px)
-	// .page-wrapper
-	// 	background-size: 100% auto
-	/**/
-
 @media only screen and (min-width : 768px)
 
-	// .page-wrapper
-	// 	background: url('../img/bg/lg-bg/bg.jpg') no-repeat
-	// 	background-size: auto 500px
+	.page-wrapper
+		background-position: 73% -141px
+		
 
-	.page-title-text
-		font-size: 3em
+	.page-title
+		padding-bottom: 1rem
+		&-text
+			font-size: 3em
 	.logo-wrap
 		margin: 0
-	.devices-img
-		max-width: 552px
 
+	.ip
+		margin-top: 1rem
+		padding: 3px 24px
+		font-size: 18px
 
 	.tarrifs
-		height: 445px
+		padding: 2.5rem 0 0
 		display: flex
 		justify-content: center
+		align-items: center
 		&::before
 			width: 500px
 		&-item
-			width: 240px
-			height: 310px
+			width: 230px
+			min-height: 220px
+			margin: 0
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
 			position: relative
-			&:not(:hover)
-				top: 30px
-			&:not(.recommend)
-				top: 30px
 			&.recommend, &:hover
 				top: 0
-				width: 320px
-				height: 380px
+				transform: scale(1.1)
 				z-index: 10
+				.tarrifs-guarantee
+					padding: 9px 0 3px 30px
+					background: url('../img/icons/list-icon.png') no-repeat 0 50%
 				.tarrifs-purchase
+					display: inline-block
 					opacity: 1
 					transition: all .2s linear
+		&-guarantee
+			padding-left: 0
+			background: none
 		&-purchase
+			display: none
 			width: 200px
 			text-align: center
 			opacity: 0
@@ -91,7 +105,7 @@
 		border: 1px solid #ced4da
 		background-color: #fafafa
 	.step-form-btn
-		margin-top: 11px
+		margin-top: 20px
 	.step3-guarantee, .step3-confirm
 		text-align: left
 	.step3-guarantee
@@ -117,18 +131,24 @@
 		.step-info
 			margin: 1.5rem 0 1.85rem
 
+
+
+
 	.advantages
-		background-image: url('../img/bg/lg-bg/bg2.jpg')
-		background-position: 50% 0
 		&-title
+			font-size: 2.8125rem
 			text-align: center
+
 
 	.info
 		padding: 3.125rem 0
 		&-title
+			font-size: 2.8125rem
 			padding: 0 22%
 		&-btn
 			margin-top: 1rem
+		&-os
+			padding-top: 3rem
 			
 	.trusted
 		padding: 3.125rem 0
@@ -136,13 +156,46 @@
 			margin: 15px 17px
 
 
+	.download
+		&-title
+			font-size: 2.8125rem
+		&-text
+			padding: 0 120px
+		&-content
+			right: 0
+			padding-bottom: 133px
+			&-item1
+				right: -127px
+				top: 50px
+			&-item2
+				position: absolute
+				top: 34px
+				right: 96px
+				left: auto
+			&-item3
+				top: -79px
+				right: -443px
+			&-item4
+				position: absolute
+				top: auto
+				bottom: 98px
+				left: 35px
+			&-item5
+				position: absolute
+				top: auto
+				bottom: 64px
+				right: 214px
+
+
 
 	.endorsment-post
+		margin-bottom: 5rem
 		padding: 4.25rem 5rem 2rem
 
 
 
 	.howTo
+		padding: 4rem 0
 		background: url('../img/bg/lg-bg/bg3.jpg') no-repeat 55% 100%
 		&-title
 			padding-right: 0
@@ -163,11 +216,21 @@
 	// 			font-size: 3em
 	/**/
 
+@media only screen and (min-width : 992px) 
+	.download
+		&-content
+			right: -11%
+			&-item2
+				right: 302px
+			&-item5
+				right: 461px
+	/**/
 
 @media only screen and (min-width : 1200px)
 
 	.page-wrapper
-		background-size: 100% 500px
+		background: url("../img/bg/lg-bg/bg.jpg") no-repeat 0 0
+
 	.page-title
 		padding: 30px 0
 		&-text
@@ -175,15 +238,29 @@
 			br
 				display: none
 			
-
-	.tarrifs-item
-		margin: 0 0 37px
 	.tarrifs
+		min-height: 307px
 		&-item
 			width: 320px
 			&.recommend, &:hover
 				width: 370px
 				max-width: 370px
+				.tarrifs-price
+					font-size: 58px
+					line-height: 1.3
+					transition: all .2s
+				.symbol
+					font-size: 30px
+					line-height: 58px
+				.period
+					font-size: 30px
+					line-height: 55px
+		&-name
+			font-size: 16px
+	.steps
+		.step2	
+			margin-bottom: 30px
+
 
 	.step-accordion .collapse-form
 		padding: 1rem 2rem 2rem
@@ -195,10 +272,77 @@
 
 	.advantages
 		padding: 3.125rem 0
+		background: url('../img/bg/lg-bg/bg2.jpg') no-repeat 0 0
+		background-size: cover
+		
+		&-logo
+			margin-left: 10px
 
 	.info
+		position: relative
+		overflow: hidden
 		&-title
+			padding: 0 170px 0 0
+			line-height: 1.2
+			text-align: left
+		&-os
+			margin-top: 3.6rem
 			padding: 0
+			&-win
+				margin-right: 30px
+			&-andr
+				margin-right: 20px
+		&-device, &-device-descr
+			margin-left: -20px
+		&-btn
+			margin-top: 5rem
+			
+		&-img
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			left: 80%
+			margin: 0
+			
+	.download
+		padding: 0
+		position: relative
+		text-align: left
+		height: 740px
+		.container
+			padding: 175px 15px 275px
+			position: relative
+			height: 100%
+		div[class*="col"]
+			position: static
+		&-text
+			padding: 0 150px 0 0
+		&-content
+			position: static
+			padding: 0
+			&-item
+				position: absolute
+			&-item1
+				right: auto
+				left: 528px
+				top: 144px
+			&-item2
+				top: 96px
+				right: 133px
+			&-item3
+				top: 269px
+				right: -19px
+			&-item4
+				bottom: 85px
+				left: 396px
+			&-item5
+				bottom: 51px
+				right: 215px
+
+		&-btn
+			margin-top: 3rem
+				
+			
 
 	.endorsment-post
 		padding: 4.25rem 1rem 2rem
@@ -218,4 +362,12 @@
 	// 	background-image: url(../img/bg/thanks/lg-bg.jpg)
 		
 	
+	/**/
+
+
+@media only screen and (min-width : 1400px)
+
+	.page-wrapper
+		background-size: 100%
+
 	/**/
