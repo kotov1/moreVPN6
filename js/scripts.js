@@ -31,7 +31,7 @@ $(function() {
 	});
 
 	$('.card-number').mask("0000 0000 0000 0000");
-	$('.card-date').mask("00 / AZ", {
+	$('.card-date').mask("AZ / 00", {
 		translation: {
 			'A': {
 				pattern: /[0-1]/, optional: true	
