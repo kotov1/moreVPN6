@@ -356,11 +356,13 @@ ul {
   background: #fff;
   position: relative;
   z-index: 1;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .tarrifs-item.recommend, .tarrifs-item:hover {
   cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .tarrifs-item:last-child {
   margin-bottom: 0;
@@ -903,9 +905,9 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background-color: #1b75bc;
   background: url("../img/bg/thanks/lg-bg.jpg") no-repeat 84% 0 !important;
   background-size: cover !important;
@@ -918,6 +920,7 @@ ul {
 .payment-wait {
   width: 430px;
   min-height: 280px;
+  height: 1px;
   min-width: 290px;
   position: fixed;
   top: 45%;
@@ -1312,6 +1315,7 @@ ul {
 
   .thanks-page {
     min-height: 100vh;
+    height: 1px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
