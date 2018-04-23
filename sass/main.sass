@@ -397,7 +397,7 @@ ul
 		&-icon
 			display: inline-block
 			
-			background: url('../img/icons/os-sprite.png') no-repeat
+			background: url('../img/icons/os-sprite2.png') no-repeat
 		&-win
 			width: 28px
 			height: 29px
@@ -618,80 +618,226 @@ ul
 
 
 // ===============================
-.page-wrapper.thanks-page
+.thanks-page
+	background-color: #1b75bc
+	background: url('../img/bg/thanks/lg-bg.jpg') no-repeat 84% 0!important
+	background-size: cover!important
+	
+	.header
+		background: none
+		position: relative
+		min-height: 415px
+	.footer
+		background: none
+		
+
+	.page-heading
+		margin: 0!important
+		padding: 2rem 0!important
+		text-align: center
+		font: 3rem/1.2 "BrandonLight", $medium_font
+		
+		
+	.info
+		overflow-x: hidden
+		&-title
+			margin-bottom: 2rem
+			font: 300 1.125rem $sub_font
+			text-align: center
+			color: #fff
+			
+		&-device
+			font: 1.125rem $medium_font
+			text-transform: uppercase
+			letter-spacing: 1px
+			color: #fff
+			&-descr
+				font-family: $sub_font
+				font-weight: 300
+				color: #fff
+		&-os
+			padding: 1rem
+			&-icon
+				display: inline-block
+				width: 55px
+				height: 55px
+				background: url('../img/icons/os-sprite.png') no-repeat
+			&-andr
+				margin-right: 15px
+				background-position: 0 0
+			&-ios
+				background-position: -64px 0
+			&-win
+				margin-right: 15px
+				background-position: -127px 0
+			&-app
+				background-position: -190px 0
+
+
+	.faq
+		padding: 2rem 0
+		color: #fff
+		&-title
+			display: inline-block
+			position: relative
+			font: 20px $medium_font
+
+		&-list
+			padding-left: 1rem
+			list-style-type: disc
+			font-family: $sub_font
+			font-weight: 300
+			.faq-link
+				color: rgba(#fff, .8)
+		&-link
+			display: inline-block
+			position: relative
+			margin-bottom: 1rem
+			color: #fff
+			text-decoration: none
+			cursor: pointer
+			&:hover
+				text-decoration: none
+			&::after
+				content: ''
+				position: absolute
+				width: 100%
+				height: 1px
+				bottom: 0
+				left: 0
+				background-color: #fff
+				visibility: hidden
+				visibility: visible
+				transform: scaleX(1)
+				transition: all .3s
+			&:hover::after
+				transform: scaleX(0)
+				transition: all .4s
+	
+	.howTo-link
+		height: 39px
+		margin: 15px auto 0
+
+
+.payment-page
 	min-height: 100vh
 	height: 1px
-	background: url(../img/bg/thanks/sm-bg.jpg) no-repeat
-	background-size: cover
 	display: flex
 	flex-direction: column
-	justify-content: space-between
-	
+	justify-content: center
+	background-color: #1b75bc
+	background: url('../img/bg/thanks/lg-bg.jpg') no-repeat 84% 0!important
+	background-size: cover!important
 	.footer
-		background-color: transparent
-		&-copy
-			color: #fff
+		margin-top: auto	
+		background-color: transparent		
+.payment-wait
+	width: 430px
+	min-height: 280px
+	min-width: 290px
+	position: fixed
+	top: 45%
+	left: 50%
+	transform: translate(-50%, -50%)
+	background-color: rgba(#fff,.1)
+	display: flex
+	flex-direction: column
+	justify-content: center
 
-.thanks
-	&-title
-		margin: 0 auto
-		padding: 0 55px
-		font: 2.25rem/1.2 "BrandonLight", $medium_font
-		color: #fff
-		text-align: center
-
-.get
-	&-text
-		font-family: $sub_font
-		line-height: 2
-		text-align: center
-	&-links
-		margin-top: 1.5rem
-	&-link
-		display: block
-		width: 130px
-		height: 45px
-		background-repeat: no-repeat
-		&-appStore
-			background-image: url('../img/app-store-white.svg')
-			margin-left: auto
-			margin-right: 10px
-		&-googlePlay
-			background-image: url('../img/google-play-white.svg')
-			margin-right: auto
-			margin-left: 10px
-		
-
-.usefull
+.payment-wait-outer, .payment-wait-inner
+	margin: 0 auto
+	position: relative
+	color: #fff
 	text-align: center
-	&-link
-		position: relative
-		font: 1.25em $regular_font
-		color: #fff
-		cursor: pointer
-		text-decoration: none
+	border-radius: 50%
+	transition: .5s ease-in-out
 		
-		&:hover
-			text-decoration: none
-			color: #fff
-			
-		&::after
-			content: ''
-			position: absolute
-			width: 100%
-			height: 1px
-			bottom: 0
-			left: 0
-			background-color: #fff
-			visibility: hidden
-			visibility: visible
-			transform: scaleX(1)
-		&:hover::after
-			transform: scaleX(0)
-			transition: all .5s
+.payment-wait-outer
+	width: 28px
+	height: 28px
+.payment-wait-inner
+	border: 2px solid #fff
+	width: 28px
+	height: 28px
+.payment-wait-outer::before,
+.payment-wait-inner::before,
+.payment-wait-inner::after
+	content: ''
+	position: absolute
+	border: 5px solid #fff
+	left: -20px
+	right: -20px
+	top: -20px
+	bottom: -20px
+	border-radius: 50%
+	animation: pulse 2.4s linear infinite
+	opacity: 0
+.payment-wait-inner::after 
+	animation-delay: 0.8s
+.payment-wait-outer::before
+	animation-delay: 1.6s
+
+.payment-wait-outer::after
+	content: ''
+	position: absolute
+	bottom: -40px
+	left: 50%
+	transform: translateX(-50%)
+	background-color: rgba(1, 52, 107,.5)
+	border-radius: 50%
+	display: block
+	width: 40px
+	height: 5px
+
+
+.payment-wait-text
+	margin-top: 60px
+	font: 400 14px $sub_font
+	text-align: center
+	color: #fff
+	&-accent
+		text-transform: uppercase
+		color: #00faa5
+
+.payment-complete
+	display: none
+	width: 13px
+	height: 10px
+	margin: 0 auto
+	background: url('../img/icons/complete.png') no-repeat 50% 50%
+
+.payment-wait
+	&.completed
+		.payment-wait-outer, .payment-wait-inner
+			background-color: #00faa5
+			border-color: #00faa5
+		.payment-wait-outer::before,
+		.payment-wait-inner::before,
+		.payment-wait-inner::after
+			border-color: #00faa5
+			animation-play-state: paused
+		.payment-complete
+			display: inline-block
+
+@keyframes pulse
+	0%
+		transform: scale(0.5)
+		opacity: 0
+		border-width: 4px
+
+	50%
+		opacity: 1
+		border-width: 1px
+
+	100%
+		transform: scale(1.2)
+		opacity: 0
+		border-width: 0
 
 			
 	
+
+
 
 
 

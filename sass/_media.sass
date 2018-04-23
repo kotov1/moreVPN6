@@ -16,21 +16,6 @@
 		&-img
 			max-width: 100%
 			margin: 2.6rem auto 0
-
-
-	// .page-wrapper.thanks-page
-	// 	background-image: url('../img/bg/md-bg/bg.jpg')
-	// 	background-position: center
-	
-	// 	.thanks
-	// 		padding: 2rem 0
-	// 	.get
-	// 		padding: 1rem 0
-	// 	.usefull
-	// 		padding: 1rem 0
-
-
-
 	/**/
 
 
@@ -207,13 +192,18 @@
 		margin-right: 5px
 
 
+	.thanks-page 
+		min-height: 100vh
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		.bottom-line
+			padding-top: 5rem
+		.info-title
+			padding: 0
 
-	// .page-wrapper.thanks-page
-	// 	background-image: url(../img/bg/thanks/lg-bg.jpg)
-	// 	.thanks
-	// 		&-title
-	// 			padding: 0
-	// 			font-size: 3em
+
+
 	/**/
 
 @media only screen and (min-width : 992px) 
@@ -224,6 +214,10 @@
 				right: 302px
 			&-item5
 				right: 461px
+				
+	.thanks-page 
+		.howTo-link
+			margin: 0 auto
 	/**/
 
 @media only screen and (min-width : 1200px)
@@ -357,10 +351,11 @@
 
 
 
+	.thanks-page
+		.info-title
+			padding-right: 0
 
-	// .page-wrapper.thanks-page
-	// 	background-image: url(../img/bg/thanks/lg-bg.jpg)
-		
+
 	
 	/**/
 
@@ -369,5 +364,11 @@
 
 	.page-wrapper
 		background-size: 100%
+
+
+	.thanks-page
+		background-size: cover
+		.bottom-line
+			padding-top: 5rem
 
 	/**/

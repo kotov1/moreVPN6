@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		
+		<meta name="theme-color" content="#000">
+		<meta name="msapplication-navbutton-color" content="#000">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+		<link rel="icon" type="image/png" href="img/favicon/favicon.png">
+
+		<title>Landing6</title>
+
+		<!-- bootstrap css -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+		<!-- custom styles -->
+		<link href="css/main.css" rel="stylesheet">
+
+	</head>
+
+	<body>
+
+
+		<div class="page-wrapper payment-page">
+
+
+			<header class="header">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-12 col-md">
+							<div class="top-line">
+								<div class="logo-wrap">
+									<a href="index.html"><img src="img/logo.svg" alt="Logo"></a>
+								</div>
+							</div>
+						</div>
+						<div class="d-none d-md-block col-md-auto">
+							<a class="header-link" href="#">Features</a>
+						</div>
+						<div class="d-none d-md-block col-md-auto">
+							<button class="header-btn">Get it now</button>
+						</div>
+					</div>
+				</div>
+			</header>
+			
+
+
+			<div class="payment-wait">
+				<div class="payment-wait-outer">
+					<div class="payment-wait-inner">
+						<i class="payment-complete"></i>
+					</div>
+				</div>
+				<div class="payment-wait-text">Waiting Your Payment...</div>
+			</div>
+
+
+
+
+
+			<footer class="footer">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-12">
+							<div class="footer-info">
+								<div class="row no-gutters justify-content-md-center">
+									<div class="col-12 col-md-auto"><div class="footer-copy">Copyright  2017  NOVAVPN.com</div></div>
+									<div class="col-12 col-md-auto"><div class="footer-support"><a href="mailto:support@novavpn.com">support@novavpn.com</a></div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+
+
+
+
+		</div> <!-- /.page-wrapper -->
+
+
+
+
+		
+		<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js"><\/script>')</script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+		<script src="js/scripts.js"></script>
+
+		<script>
+
+			function redirect() {
+				location.replace("thanks.html");
+			}
+
+			function completePayment() {
+				$('.payment-wait').toggleClass('completed');
+				if ($('.payment-wait').hasClass('completed')) {
+					$('.payment-wait-text').html('Yor Payment is <span class="payment-wait-text-accent">completed!</span>');
+				}
+			}
+
+			$(document).ready(function() {
+				setTimeout('completePayment()',2500);
+				setTimeout('redirect()',3500);
+			});
+
+		</script>
+
+	</body>
+</html>
