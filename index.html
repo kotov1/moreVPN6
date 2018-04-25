@@ -42,7 +42,7 @@
 							<a class="header-link" href="#">Features</a>
 						</div>
 						<div class="d-none d-md-block col-md-auto">
-							<button class="header-btn">Get it now</button>
+							<button class="header-btn js-scrollToPlans">Get it now</button>
 						</div>
 					</div>
 				</div>
@@ -74,7 +74,7 @@
 					<div class="step step1">
 						<div class="row">
 							<div class="col-12 d-flex justify-content-center">
-								<div class="section-title step-title_white">Choose a plan</div>
+								<div class="step-title step-title_white">Choose a plan</div>
 							</div>
 							<div class="col-12">
 								<div class="tarrifs">	
@@ -118,7 +118,7 @@
 							</div>
 							<div class="col-12">
 								<div id="login-collapse">
-									<div class="section-title">Your account information</div>
+									<div class="step-title">Your account information</div>
 									<div class="step-info">Already signed up? <a href="#">Sign in now</a></div>
 									<form action="#" id="login-form">
 										<div class="form-line">
@@ -139,10 +139,13 @@
 
 					<div class="step step3">
 						<div class="row">
+							<div class="col-12 d-flex justify-content-center">
+									<div class="step-title">Choose billing method</div>
+								</div>
 								<div class="col-12">
-									<div class="step-accordion" id="step-accordion">
-										<div class="section-title">Enter your<br> billing information</div>
-										<div class="step-info">You <b>will not be billed</b> until your trial ends</div>
+									<div class="step-accordion collapse" id="step-accordion">
+
+										<div class="step-info">You will not be billed until your trial ends</div>
 										<div class="card">
 												<div class="card-header" id="headingOne">
 													<button class="step-accordion-btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -159,48 +162,57 @@
 							
 												<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#step-accordion">
 													<div class="collapse-form">
-														<form action="#" class="payment-form1">
-															<div class="row">
-																<div class="form-group col-12 col-md-6">
-																	<label for="inputFirstName1">First name</label>
-																	<input type="text" class="card-firstName form-control" name="inputFirstName1"  id="inputFirstName1">
+														<div class="payment-form1">
+															<form action="#">
+																<div class="row">
+																	<div class="form-group col-12 col-md-6">
+																		<label for="inputFirstName1">First name</label>
+																		<input type="text" class="card-firstName form-control" name="inputFirstName1"  id="inputFirstName1">
+																	</div>
+																	<div class="form-group col-12 col-md-6">
+																		<label for="inputLastName1">Last name</label>
+																		<input type="text" class="card-lastName form-control" name="inputLastName1" id="inputLastName1">
+																	</div>
+																	<div class="form-group col-12 col-md-6">
+																		<label for="inputCardNumber1">Сard number <i class="my-tooltip" data-toggle="tooltip" data-placement="top" title="Enter 16 numbers"></i></label>
+																		<input type="text" class="card-number form-control" id="inputCardNumber1" name="inputCardNumber1" placeholder="0000 0000 0000 0000">
+																	</div>
+																	<div class="form-group col-6">
+																		<label for="inputExpirationDate1">Expiration date</label>
+																		<input type="text" class="card-date form-control" id="inputExpirationDate1" name="inputExpirationDate1" placeholder="MM / YY">
+																	</div>
+																	<div class="form-group col-6 col-md-3">
+																		<label for="inputCvv1">cvv<i class="my-tooltip" data-toggle="tooltip" data-placement="top" title="Enter 3 numbers"></i></label>
+																		<input type="text" class="card-cvv form-control" id="inputCvv1" name="inputCvv1" placeholder="000">
+																	</div>
+																	<div class="form-group col-6 col-md-3">
+																		<label for="inputPostalCode1">Postal code</label>
+																		<input type="text" class="card-postal form-control" id="inputPostalCode1" name="inputPostalCode1" placeholder="000">
+																	</div>
+																	<div class="col-12"><div class="form-divider"></div></div>
 																</div>
-																<div class="form-group col-12 col-md-6">
-																	<label for="inputLastName1">Last name</label>
-																	<input type="text" class="card-lastName form-control" name="inputLastName1" id="inputLastName1">
-																</div>
-																<div class="form-group col-12 col-md-6">
-																	<label for="inputCardNumber1">Сard number <i class="my-tooltip" data-toggle="tooltip" data-placement="top" title="Enter 16 numbers"></i></label>
-																	<input type="text" class="card-number form-control" id="inputCardNumber1" name="inputCardNumber1" placeholder="0000 0000 0000 0000">
-																</div>
-																<div class="form-group col-6">
-																	<label for="inputExpirationDate1">Expiration date</label>
-																	<input type="text" class="card-date form-control" id="inputExpirationDate1" name="inputExpirationDate1" placeholder="MM / YY">
-																</div>
-																<div class="form-group col-6">
-																	<label for="inputCvv1">cvv<i class="my-tooltip" data-toggle="tooltip" data-placement="top" title="Enter 3 numbers"></i></label>
-																	<input type="text" class="card-cvv form-control" id="inputCvv1" name="inputCvv1" placeholder="000">
-																</div>
-																<div class="form-group col-6">
-																	<label for="inputPostalCode1">Postal code<i class="my-tooltip" data-toggle="tooltip" data-placement="top" title="Postal code is bla bla bla"></i></label>
-																	<input type="text" class="card-postal form-control" id="inputPostalCode1" name="inputPostalCode1" placeholder="000">
-																</div>
-																<div class="col-12"><div class="form-divider"></div></div>
-															</div>
-															<div class="row mt-md-2">
-																<div class="form-group col-12 col-md-6">
-																	<label><a href="#inputCoupon1" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="inputCoupon1">Got coupon?</a></label>
-																	<div class="collapse" id="inputCoupon1">
-																		<input type="text" class="card-coupon form-control" placeholder="0000 0000 0000 0000" name="inputCoupon1">
+																<div class="row mt-md-2">
+																	<div class="form-group col-12 col-md-6 col-xl-3">
+																		<label><a href="#inputCoupon1" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="inputCoupon1">Got coupon?</a></label>
+																		<div class="collapse" id="inputCoupon1">
+																			<input type="text" class="card-coupon form-control" placeholder="0000 0000 0000" name="inputCoupon1">
+																		</div>
+																	</div>
+																	<div class="col-12 col-md-6 col-xl-6 offset-xl-3 d-flex align-items-center justify-content-center">
+																		<button type="button" class="btn step-form-btn js-redirect">Join now</button>
 																	</div>
 																</div>
-																<div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
-																	<button type="button" class="btn step-form-btn js-redirect">Join now</button>
-																</div>
+															</form>
+														</div>
+														<div class="payment-footer">
+															<div class="step3-guarantee">Secure checkout. You’re 100% by our 7-day money-back guarantee.</div>
+															<div class="tarrif-info"></div>
+															<div class="step3-confirm">By submitting this form you agree to our <a href="#">Terms and Conditions</a></div>
+															<div class="step3-contact">
+																<p class="step3-contact-info">IBS 4 Data limited, Suite 508 Marina towers, Newtown Barracks road, Belize city, Belize</p>
+																<p class="step3-contact-data">For all questions please contact by mail <a href="mailto:support@novavpn.com">support@novavpn.com</a> or <a href="#">Support Desk</a></p>
 															</div>
-														</form>
-														<div class="step3-guarantee">Secure checkout. You’re 100% by our 30-day money-back guarantee.</div>
-														<div class="step3-confirm">By submitting this form you agree to our <a href="#">Terms and Conditions</a></div>
+														</div>
 													</div>
 												</div>
 										</div> <!-- /.card -->
@@ -215,48 +227,43 @@
 							
 												<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#step-accordion">
 													<div class="collapse-form">
-														<form action="#" class="payment-form2">
-															<div class="row">
-																<div class="form-group col-12 col-md-6">
-																	<label for="inputFirstName2">First name</label>
-																	<input type="text" class="card-firstName form-control" name="inputFirstName2"  id="inputFirstName2">
+														<div class="payment-form2">
+															<form action="#">
+																<div class="payment-form-info d-flex align-items-center justify-content-center">
+																		<div class="row">
+																			<div class="col-12 d-flex justify-content-center">
+																				<img src="img/steps-payment-logos/btc.png" alt="bitcoin">
+																			</div>
+																			<div class="col-12">
+																				<p class="payment-form-info-text">You will be redirected to Paymentwall to complete your purchase sercurely.</p>
+																			</div>
+																		</div>
 																</div>
-																<div class="form-group col-12 col-md-6">
-																	<label for="inputLastName2">Last name</label>
-																	<input type="text" class="card-lastName form-control" name="inputLastName2" id="inputLastName2">
+																<div class="row">
+																	<div class="col-12"><div class="form-divider"></div></div>
 																</div>
-																<div class="form-group col-12 col-md-6">
-																	<label for="inputCardNumber2">Сard number <i class="my-tooltip" data-toggle="tooltip" data-placement="top" title="Enter 16 numbers"></i></label>
-																	<input type="text" class="card-number form-control" id="inputCardNumber2" name="inputCardNumber2" placeholder="0000 0000 0000 0000">
-																</div>
-																<div class="form-group col-6">
-																	<label for="inputExpirationDate2">Expiration date</label>
-																	<input type="text" class="card-date form-control" id="inputExpirationDate2" name="inputExpirationDate2" placeholder="MM / YY">
-																</div>
-																<div class="form-group col-6">
-																	<label for="inputCvv2">cvv<i class="my-tooltip" data-toggle="tooltip" data-placement="top" title="Enter 3 numbers"></i></label>
-																	<input type="text" class="card-cvv form-control" id="inputCvv2" name="inputCvv2" placeholder="000">
-																</div>
-																<div class="form-group col-6">
-																	<label for="inputPostalCode2">Postal code<i class="my-tooltip" data-toggle="tooltip" data-placement="top" title="Postal code is bla bla bla"></i></label>
-																	<input type="text" class="card-postal form-control" id="inputPostalCode2" name="inputPostalCode2" placeholder="000">
-																</div>
-																<div class="col-12"><div class="form-divider"></div></div>
-															</div>
-															<div class="row mt-md-2">
-																<div class="form-group col-12 col-md-6">
-																	<label><a href="#inputCoupon2" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="inputCoupon2">Got coupon?</a></label>
-																	<div class="collapse" id="inputCoupon2">
-																		<input type="text" class="card-coupon form-control" placeholder="0000 0000 0000 0000" name="inputCoupon2">
+																<div class="row mt-md-2">
+																		<div class="form-group col-12 col-md-6 col-xl-3">
+																			<label><a href="#inputCoupon2" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="inputCoupon2">Got coupon?</a></label>
+																			<div class="collapse" id="inputCoupon2">
+																				<input type="text" class="card-coupon form-control" placeholder="0000 0000 0000" name="inputCoupon1">
+																			</div>
+																		</div>
+																		<div class="col-12 col-md-6 col-xl-6 offset-xl-3 d-flex align-items-center justify-content-center">
+																			<a href="#" class="btn step-form-btn">Join now</a>
+																		</div>
 																	</div>
-																</div>
-																<div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
-																	<button type="submit" class="btn step-form-btn js-redirect">Join now</button>
-																</div>
+															</form>
+														</div>
+														<div class="payment-footer">
+															<div class="step3-guarantee">Secure checkout. You’re 100% by our 7-day money-back guarantee.</div>
+															<div class="tarrif-info"></div>
+															<div class="step3-confirm">By submitting this form you agree to our <a href="#">Terms and Conditions</a></div>
+															<div class="step3-contact">
+																<p class="step3-contact-info">IBS 4 Data limited, Suite 508 Marina towers, Newtown Barracks road, Belize city, Belize</p>
+																<p class="step3-contact-data">For all questions please contact by mail <a href="mailto:support@novavpn.com">support@novavpn.com</a> or <a href="#">Support Desk</a></p>
 															</div>
-														</form>
-														<div class="step3-guarantee">Secure checkout. You’re 100% by our 30-day money-back guarantee.</div>
-														<div class="step3-confirm">By submitting this form you agree to our <a href="#">Terms and Conditions</a></div>
+														</div>
 													</div>
 												</div>
 										</div> <!-- /.card -->
@@ -274,56 +281,58 @@
 							
 												<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#step-accordion">
 													<div class="collapse-form">
-														<form action="#" class="payment-form3">
-															<div class="row">
-																<div class="form-group col-12 col-md-6">
-																	<label for="inputFirstName3">First name</label>
-																	<input type="text" class="card-firstName form-control" id="inputFirstName3" name="inputFirstName3">
+														<div class="payment-form3">
+															<form action="#">
+																<div class="payment-form-info d-flex align-items-center justify-content-center">
+																		<div class="row">
+																			<div class="col-12 d-flex flex-wrap align-items-center justify-content-center">
+																				<img src="img/steps-payment-logos/wp.png" alt="worldpay">
+																				<img src="img/steps-payment-logos/sage.png" alt="sage">
+																				<img src="img/steps-payment-logos/skrill.png" alt="skrill">
+																				<img src="img/steps-payment-logos/yandex.png" alt="yandex">
+																				<img src="img/steps-payment-logos/sofort.png" alt="sofort">
+																				<img src="img/steps-payment-logos/aliplay.png" alt="aliplay">
+																				<img src="img/steps-payment-logos/cirrus.png" alt="cirrus">
+																				<img src="img/steps-payment-logos/giropay.png" alt="giropay">
+																			</div>
+																			<div class="col-12">
+																				<p class="payment-form-info-text">You will be redirected to Paymentwall to complete your purchase sercurely.</p>
+																			</div>
+																		</div>
 																</div>
-																<div class="form-group col-12 col-md-6">
-																	<label for="inputLastName3">Last name</label>
-																	<input type="text" class="card-lastName form-control" id="inputLastName3" name="inputLastName3">
+																<div class="row">
+																	<div class="col-12"><div class="form-divider"></div></div>
 																</div>
-																<div class="form-group col-12 col-md-6">
-																	<label for="inputCardNumber3">Сard number <i class="my-tooltip" data-toggle="tooltip" data-placement="top" title="Enter 16 numbers"></i></label>
-																	<input type="text" class="card-number form-control" id="inputCardNumber3" name="inputCardNumber3" placeholder="0000 0000 0000 0000">
-																</div>
-																<div class="form-group col-6">
-																	<label for="inputExpirationDate3">Expiration date</label>
-																	<input type="text" class="card-date form-control" id="inputExpirationDate3" name="inputExpirationDate3" placeholder="MM / YY" required>
-																</div>
-																<div class="form-group col-6">
-																	<label for="inputCvv3">cvv<i class="my-tooltip" data-toggle="tooltip" data-placement="top" title="Enter 3 numbers"></i></label>
-																	<input type="text" class="card-cvv form-control" id="inputCvv3" placeholder="000" name="inputCvv3" required>
-																</div>
-																<div class="form-group col-6">
-																	<label for="inputPostalCode3">Postal code<i class="my-tooltip" data-toggle="tooltip" data-placement="top" title="Postal code is bla bla bla"></i></label>
-																	<input type="text" class="card-postal form-control" id="inputPostalCode3" name="inputPostalCode3" placeholder="000" required>
-																</div>
-																<div class="col-12"><div class="form-divider"></div></div>
-															</div>
-															<div class="row mt-md-2">
-																<div class="form-group col-12 col-md-6">
-																	<label><a href="#inputCoupon3" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="inputCoupon3">Got coupon?</a></label>
-																	<div class="collapse" id="inputCoupon3">
-																		<input type="text" class="card-coupon form-control" placeholder="0000 0000 0000 0000" name="inputCoupon3">
+																<div class="row mt-md-2">
+																	<div class="form-group col-12 col-md-6 col-xl-3">
+																		<label><a href="#inputCoupon3" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="inputCoupon3">Got coupon?</a></label>
+																		<div class="collapse" id="inputCoupon3">
+																			<input type="text" class="card-coupon form-control" placeholder="0000 0000 0000" name="inputCoupon1">
+																		</div>
+																	</div>
+																	<div class="col-12 col-md-6 col-xl-6 offset-xl-3 d-flex align-items-center justify-content-center">
+																		<a href="#" class="btn step-form-btn">Join now</a>
 																	</div>
 																</div>
-																<div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
-																	<button type="submit" class="btn step-form-btn js-redirect">Join now</button>
-																</div>
+															</form>
+														</div>
+														<div class="payment-footer">
+															<div class="step3-guarantee">Secure checkout. You’re 100% by our 7-day money-back guarantee.</div>
+															<div class="tarrif-info"></div>
+															<div class="step3-confirm">By submitting this form you agree to our <a href="#">Terms and Conditions</a></div>
+															<div class="step3-contact">
+																<p class="step3-contact-info">IBS 4 Data limited, Suite 508 Marina towers, Newtown Barracks road, Belize city, Belize</p>
+																<p class="step3-contact-data">For all questions please contact by mail <a href="mailto:support@novavpn.com">support@novavpn.com</a> or <a href="#">Support Desk</a></p>
 															</div>
-														</form>
-														<div class="step3-guarantee">Secure checkout. You’re 100% by our 30-day money-back guarantee.</div>
-														<div class="step3-confirm">By submitting this form you agree to our <a href="#">Terms and Conditions</a></div>
+														</div>
 													</div>
 												</div>
 										</div> <!-- /.card -->
 
-									</div>
-								</div>
-						</div>
-					</div>
+									</div> <!-- /.step-accordion -->
+								</div> <!-- /.col -->
+						</div> <!-- /.row -->
+					</div> <!-- /.step3 -->
 					
 				</div> <!-- /.container -->
 			</div>
@@ -375,7 +384,7 @@
 							<img class="info-img" src="img/devices.png" alt="Private Internet Access">
 							<div class="row justify-content-center justify-content-xl-start">
 								<div class="col-auto">
-									<button class="btn info-btn">get vpn now</button>
+									<button class="btn info-btn js-scrollToPlans">get vpn now</button>
 								</div>
 							</div>
 						</div>
@@ -435,7 +444,7 @@
 							</div>
 							<div class="row justify-content-center justify-content-xl-start">
 								<div class="col-auto">
-									<button class="btn download-btn">get vpn now</button>
+									<button class="btn download-btn js-scrollToPlans">get vpn now</button>
 								</div>
 							</div>
 						</div>

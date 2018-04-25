@@ -71,7 +71,7 @@ ul {
   white-space: nowrap;
 }
 
-.section-title {
+.section-title, .step-title {
   text-align: center;
   font: 1.125em "BrandonMedium", sans-serif;
   color: #383c43;
@@ -309,13 +309,9 @@ ul {
 }
 .step-accordion-btn img {
   display: none;
+  max-height: 25px;
 }
 
-.step2-sign {
-  font-family: "Roboto", sans-serif;
-  color: #383c43;
-  text-align: center;
-}
 .step2 .form-line {
   max-width: 435px;
   margin: 0 auto;
@@ -334,11 +330,14 @@ ul {
 .step3 input {
   padding: 0.5rem 0.5rem 0.5rem 2rem;
 }
-.step3 a {
+.step3 a:not(.btn) {
   color: #006ad7;
 }
-.step3 a:hover {
+.step3 a:not(.btn):hover {
   color: #0077f1;
+}
+.step3 .card-number, .step3 .card-cvv {
+  background: #fff url("../img/icons/input-lock.png") no-repeat calc(100% - 20px) 50%;
 }
 
 .tarrifs {
@@ -359,7 +358,7 @@ ul {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
-.tarrifs-item.recommend, .tarrifs-item:hover {
+.tarrifs-item.recommend {
   cursor: pointer;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
@@ -442,11 +441,10 @@ ul {
   position: absolute;
   top: -3px;
   right: -30px;
-  width: 19px;
-  height: 19px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  background: url("../img/icons/input-icons-set.png") no-repeat;
-  background-position: -20px 0;
+  background: url("../img/icons/input-tooltip.png") no-repeat 0 0;
 }
 
 .form-divider {
@@ -468,21 +466,55 @@ ul {
   background-color: #014284;
 }
 
-.step3-guarantee, .step3-confirm {
-  margin-top: 15px;
-  font-size: 14px;
-  font-weight: 400;
+.payment-footer {
+  font-family: "Roboto", sans-serif;
+}
+
+.step3-guarantee, .step3-confirm, .tarrif-info {
+  margin-top: 10px;
+}
+
+.step3-guarantee, .step3-confirm, .tarrif-info, .step3-contact {
+  font-size: 12px;
+}
+
+.step3-guarantee, .tarrif-info {
+  color: #333;
+}
+
+.step3-confirm, .step3-contact {
+  color: #969696;
+}
+
+.step3-contact {
+  margin-top: 20px;
+}
+.step3-contact-info, .step3-contact-data {
+  margin-bottom: 0;
+}
+
+.payment-form1, .payment-form2, .payment-form3 {
+  padding-bottom: 10px;
+}
+
+.payment-form-info {
+  padding: 24px 0 40px;
+  min-height: 170px;
+  height: auto;
+  color: #333;
+  font: 14px "Roboto", sans-serif;
   text-align: center;
 }
-
-.step3-guarantee {
-  color: #333;
-  font-family: "Roboto", sans-serif;
+.payment-form-info .row {
+  width: 100%;
 }
-
-.step3-confirm {
-  color: #969696;
-  font-family: "Roboto", sans-serif;
+.payment-form-info-text {
+  margin: 20px 0 0 0;
+}
+.payment-form-info img {
+  display: block;
+  margin: 10px;
+  max-height: 30px;
 }
 
 .collapse-form {
@@ -580,7 +612,7 @@ ul {
   padding: 4rem 0;
   background-color: #fafafa;
 }
-.trusted .section-title {
+.trusted .section-title, .trusted .step-title {
   margin-bottom: 2rem;
 }
 .trusted img {
@@ -771,11 +803,11 @@ ul {
 .footer-copy {
   color: #959698;
 }
-.footer-support {
-  color: #4a7ed9;
+.footer-support a {
+  color: #0025ff;
 }
 .footer-support a:hover {
-  color: #8abcf1;
+  color: #3351ff;
 }
 
 .thanks-page {
@@ -1143,17 +1175,17 @@ ul {
             align-items: center;
     position: relative;
   }
-  .tarrifs-item.recommend, .tarrifs-item:hover {
+  .tarrifs-item.recommend {
     top: 0;
     -webkit-transform: scale(1.1);
             transform: scale(1.1);
     z-index: 10;
   }
-  .tarrifs-item.recommend .tarrifs-guarantee, .tarrifs-item:hover .tarrifs-guarantee {
+  .tarrifs-item.recommend .tarrifs-guarantee {
     padding: 9px 0 3px 30px;
     background: url("../img/icons/list-icon.png") no-repeat 0 50%;
   }
-  .tarrifs-item.recommend .tarrifs-purchase, .tarrifs-item:hover .tarrifs-purchase {
+  .tarrifs-item.recommend .tarrifs-purchase {
     display: inline-block;
     opacity: 1;
     -webkit-transition: all 0.2s linear;
@@ -1175,7 +1207,7 @@ ul {
   .steps {
     padding: 0 0 3.125rem;
   }
-  .steps .section-title {
+  .steps .section-title, .steps .step-title {
     margin: 1rem 0 0;
   }
 
@@ -1198,8 +1230,18 @@ ul {
   }
 
   .step3-guarantee {
-    padding: 10px 0 10px 40px;
-    background: url("../img/icons/guarantee30.png") no-repeat 0 0;
+    padding: 10px 0 10px 45px;
+    position: relative;
+  }
+  .step3-guarantee::before {
+    content: "";
+    width: 37px;
+    height: 32px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url("../img/icons/7guarantee.svg") no-repeat 50% 50%;
+    z-index: 0;
   }
 
   .step input {
@@ -1374,21 +1416,21 @@ ul {
   .tarrifs-item {
     width: 320px;
   }
-  .tarrifs-item.recommend, .tarrifs-item:hover {
+  .tarrifs-item.recommend {
     width: 370px;
     max-width: 370px;
   }
-  .tarrifs-item.recommend .tarrifs-price, .tarrifs-item:hover .tarrifs-price {
+  .tarrifs-item.recommend .tarrifs-price {
     font-size: 58px;
     line-height: 1.3;
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
   }
-  .tarrifs-item.recommend .symbol, .tarrifs-item:hover .symbol {
+  .tarrifs-item.recommend .symbol {
     font-size: 30px;
     line-height: 58px;
   }
-  .tarrifs-item.recommend .period, .tarrifs-item:hover .period {
+  .tarrifs-item.recommend .period {
     font-size: 30px;
     line-height: 55px;
   }

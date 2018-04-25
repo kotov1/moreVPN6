@@ -1,15 +1,6 @@
 
 $(function() {
 
-	// Фиксирование состояние рекомендованной карточки тарифного плана
-	$(".tarrifs-item").hover( function(){
-		$(".tarrifs-item").eq(0).removeClass('recommend');	
-	});
-
-	$(".tarrifs-item").mouseleave(function(){
-		$(".tarrifs-item").eq(0).addClass('recommend');
-	});
-
 
 	$('.card-header').click(function() {
 		if ($(this).hasClass('opened')) {
@@ -24,12 +15,22 @@ $(function() {
 	$('.my-tooltip').tooltip();
 
 
+	$('.js-scrollToPlans').click(function(event) {
+		event.preventDefault;
+		var top = $('.step1').offset().top;
+		$('body,html').animate({scrollTop: top-100}, 1000);
+	});
+
 	
 	// FORM VALIDATION
+
+	// restricting numbers
 	$('.card-firstName, .card-lastName').keypress(function(key) { ;
 		if((key.charCode >= 33 && key.charCode <= 64) || (key.charCode >= 91 && key.charCode <= 96) || (key.charCode >= 123 && key.charCode <= 127)) return false;
 	});
 
+
+	// jquery input mask
 	$('.card-number').mask("0000 0000 0000 0000");
 	$('.card-date').mask("AZ / 00", {
 		translation: {
@@ -43,13 +44,50 @@ $(function() {
 	});
 	$('.card-cvv').mask("000");
 	$('.card-postal').mask("000");
-	$('.card-coupon').mask("0000 0000 0000 0000");
 
 
-	$('.tarrifs-item').click(function() {
-		var top = $('#login-collapse').offset().top;
+	// tarrif plan click behaviour
+	var choise = 0;
+	$('.tarrifs-item').on('click', function() {
+		var top;
+		$('.tarrifs-item').removeClass('recommend current');
+		$(this).addClass('recommend current');
+		appendTarrifInfo();
+		if(choise && $("#login-form").valid()) {top = $('.step3').offset().top;}
+		else {top = $('#login-collapse').offset().top;}
 		$('body,html').animate({scrollTop: top-100}, 1000);
+		choise = 1;
 	});
+
+
+	// tarrif plan hovering
+	$(".tarrifs-item").mouseenter( function(){
+		$(".tarrifs-item").removeClass('recommend');	
+		$(this).addClass('recommend');
+	});
+	$('.tarrifs').mouseleave(function(){
+		if(!choise) {
+			$(".tarrifs-item").removeClass('recommend');	
+			$(".tarrifs-item").eq(0).addClass('recommend');
+		} else {
+			$(".tarrifs-item").removeClass('recommend');	
+			$(".tarrifs-item.current").addClass('recommend');
+		}
+	});
+
+
+	// changing info in payment card
+	function appendTarrifInfo() {
+		if($('.tarrifs-item1').hasClass('recommend')) {
+			$('.tarrif-info').text('NovaVPN 1 year plan ($65.00 one-time payment)');
+		} else if($('.tarrifs-item2').hasClass('recommend')) {
+			$('.tarrif-info').text('NovaVPN 6 months plan ($46.15 one-time payment)');
+		} else if($('.tarrifs-item3').hasClass('recommend')) {
+			$('.tarrif-info').text('NovaVPN 1 month plan ($10.99 automatically charged every month)');
+		}
+	}
+
+
 
 	$("#login-form").validate({
 			rules: {
@@ -79,8 +117,9 @@ $(function() {
 			}
 		});
 
+	$('#step-accordion').removeClass('collapse');
 
-	$(".payment-form1").validate({
+	$(".payment-form1 form").validate({
 			rules: {
 				inputFirstName1: "required",
 				inputLastName1: "required",
@@ -99,10 +138,7 @@ $(function() {
 				inputPostalCode1: {
 					required: true,
 					minlength: 3
-				},
-				inputCoupon1: {
-					minlength: 19
-				}	
+				}
 			},
 			messages: {
 				inputFirstName1: "Please enter your firstname",
@@ -122,115 +158,14 @@ $(function() {
 				inputPostalCode1: {
 					required: "Please provide a postal code",
 					minlength: "The number must contain at least 3 numbers"
-				},
-				inputCoupon1: {
-					minlength: "The number must contain at least 16 numbers"
-				},
-			}
-		});
-
-	$(".payment-form2").validate({
-			rules: {
-				inputFirstName2: "required",
-				inputLastName2: "required",
-				inputCardNumber2: {
-						required: true,
-						minlength: 19
-					},
-				inputExpirationDate2: {
-						required: true,
-						minlength: 7
-					},
-				inputCvv2: {
-					required: true,
-					minlength: 3
-				},
-				inputPostalCode2: {
-					required: true,
-					minlength: 3
-				},
-				inputCoupon2: {
-					minlength: 19
-				}	
-			},
-			messages: {
-				inputFirstName2: "Please enter your firstname",
-				inputLastName2: "Please enter your lastname",
-				inputCardNumber2: {
-					required: "Please provide a card number",
-					minlength: "The number must contain at least 16 numbers"
-				},
-				inputExpirationDate2: {
-					required: "Please provide an expiration date",
-					minlength: "The number must contain at least 4 numbers"
-				},
-				inputCvv2: {
-					required: "Please provide a cvv number",
-					minlength: "The number must contain at least 3 numbers"
-				},
-				inputPostalCode2: {
-					required: "Please provide a postal code",
-					minlength: "The number must contain at least 3 numbers"
-				},
-				inputCoupon2: {
-					minlength: "The number must contain at least 16 numbers"
-				},
-			}
-		});
-
-	$(".payment-form3").validate({
-			rules: {
-				inputFirstName3: "required",
-				inputLastName3: "required",
-				inputCardNumber3: {
-						required: true,
-						minlength: 19
-					},
-				inputExpirationDate3: {
-						required: true,
-						minlength: 7
-					},
-				inputCvv3: {
-					required: true,
-					minlength: 3
-				},
-				inputPostalCode3: {
-					required: true,
-					minlength: 3
-				},
-				inputCoupon3: {
-					minlength: 19
-				}	
-			},
-			messages: {
-				inputFirstName3: "Please enter your firstname",
-				inputLastName3: "Please enter your lastname",
-				inputCardNumber3: {
-					required: "Please provide a card number",
-					minlength: "The number must contain at least 16 numbers"
-				},
-				inputExpirationDate3: {
-					required: "Please provide an expiration date",
-					minlength: "The number must contain at least 4 numbers"
-				},
-				inputCvv3: {
-					required: "Please provide a cvv number",
-					minlength: "The number must contain at least 3 numbers"
-				},
-				inputPostalCode3: {
-					required: "Please provide a postal code",
-					minlength: "The number must contain at least 3 numbers"
-				},
-				inputCoupon3: {
-					minlength: "The number must contain at least 16 numbers"
-				},
+				}
 			}
 		});
 
 
+	// test redirecting to payment page
 	$('.js-redirect').click(function(event) {
 		event.preventDefault;
-		console.log('cl');
 		if($(this).closest('form').valid()) {
 			location.replace("payment.html");
 		}
