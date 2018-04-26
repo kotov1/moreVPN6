@@ -148,6 +148,7 @@ ul {
   font-size: 14px;
   text-transform: uppercase;
   border-radius: 7px;
+  text-align: center;
 }
 .ip-address {
   display: inline-block;
